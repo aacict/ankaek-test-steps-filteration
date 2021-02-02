@@ -1,5 +1,6 @@
 import jwtGeneration from '../../helpers/jwtGeneration';
-import {User} from '../../models'
+import moment from 'moment';
+import {User, UserVerificationToken} from '../../models'
 const services = {
     signin:async(req, res, next) => {
         try {
@@ -28,6 +29,12 @@ const services = {
           password: req.body['password'],
         })
            await user.save();
+           const token: number = await Math.floor(1000 + Math.random() * 9000);
+           const newToken = new UserVerificationToken({
+            token,
+            user_id: user['_id']
+        })
+        await newToken.save();
            await res.json({status:true, message:'User added successfully', status_code:200});
         } catch (error) {
           console.log(error);
