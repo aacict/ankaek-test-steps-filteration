@@ -8,12 +8,17 @@ const notificationSchema = new mongoose.Schema(
          ref: 'User', 
          required: true
         },
-      expires_at: {
-        type: Date,
-        default: Date.now,
-        required: true,
-        expires: 300
-      },
+        message: { 
+            type: String,
+            default: `you reached 10000 step today ${Date.now}`,
+            required: true
+            },
+        expires_at: {
+            type: Date,
+            default: Date.now,
+            required: true,
+            expires: 300
+        },
   },
   {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
