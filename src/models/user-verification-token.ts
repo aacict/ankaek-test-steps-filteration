@@ -15,7 +15,8 @@ const userVerificationTokenSchema = new mongoose.Schema(
         },
       expires_at: {
           type: Date,
-          default: moment().add(1, 'h')
+          default: moment().add(1, 'h'),
+          required: true
       }
   },
   {
