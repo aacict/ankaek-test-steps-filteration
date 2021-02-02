@@ -9,7 +9,7 @@
     },
      "compileOnSave": true,
      "include": [
-        "./src/"
+        "./src/*"
       ],
     "lib": ["es2015"]
   }
