@@ -1,13 +1,13 @@
 import {Router} from 'express';
 import verifyjwt from './jwtVerify';
 import authRoute from '../components/Auth/authRoute';
-// const userRoute = require('../components/User/userRoute');
+import userRoute from '../components/User/userRoute';
 
 
 const router = () => {
   const router:any = Router();
   authRoute(router, verifyjwt);
-//   userRoute(router, passport);
+  userRoute(router, verifyjwt);
   return router;
 };
 
