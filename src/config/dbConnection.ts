@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 
 //Set up default mongoose connection
-const mongoDB: any = `mongodb://localhost:27017/testdb`;
+const mongoDB: string = `mongodb://localhost:27017/testdb`;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
 
 //Get the default connection
@@ -16,4 +16,4 @@ db.on('error', async (err: any) => {
   db.disconnect();
 });
 
-export default {db, mongoose}
+export {db, mongoose}
