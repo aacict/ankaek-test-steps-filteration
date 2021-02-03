@@ -3,7 +3,6 @@ import {User, Jwt} from '../models';
 const verifyjwt = async (req, res, next) => {
     try {
         const token: string = req.headers['authorization'].split('bearer ')[1];
-        console.log('token', token)
     if(token){
         const jwt: any = await Jwt.findOne({jwt: token});
         if(jwt){
