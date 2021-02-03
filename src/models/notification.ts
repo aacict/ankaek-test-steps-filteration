@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
- 
 const notificationSchema = new mongoose.Schema(
   {
       user_id: { 
@@ -10,7 +9,7 @@ const notificationSchema = new mongoose.Schema(
         },
         message: { 
             type: String,
-            default: `you reached 10000 step today ${Date.now}`,
+            default: `you reached 10000 step today`,
             required: true
             },
         expires_at: {
